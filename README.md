@@ -26,6 +26,12 @@ As a result of the above command, the following libs will be installed.
 - styled-components
 - node-sass (dev)
 
+And globally install JSON server.
+
+```
+npm i -g json-server
+```
+
 #### libs to install - proxy
 
 - json-server
