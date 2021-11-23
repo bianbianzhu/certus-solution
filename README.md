@@ -38,6 +38,16 @@ In the 1st one (For react-app frontend):
 npm start
 ```
 
+## ! ! ! TroubleShooting ! ! !
+
+If you encouter error: Node Sass version X.X.X is incompatible with ^X.X.X || ^X.X.X, please
+uninstall node-sass and install sass
+
+```
+npm uninstall node-sass
+npm i sass --save-dev
+```
+
 In the 2nd one (For json-server as backend):
 
 ```
