@@ -1,0 +1,38 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+.status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  @include font-default;
+  text-transform: capitalize;
+  gap: 0.5rem;
+
+  svg {
+    font-size: 2.4rem;
+  }
+
+  span:nth-child(2) {
+    color: $font-color-highlighted;
+  }
+
+  &--plus {
+    color: $color-background-icon-green;
+    span:last-child {
+      color: $font-color-success;
+    }
+  }
+
+  &--minus {
+    color: $color-background-icon-red;
+    span:last-child {
+      color: $font-color-error;
+    }
+  }
+
+  &--column.status--column {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

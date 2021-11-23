@@ -1,0 +1,12 @@
+@use "../../../scss/mixins" as *;
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+
+  &__range {
+    @include font-default;
+    font-size: 1.4rem;
+  }
+}

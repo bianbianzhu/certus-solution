@@ -1,0 +1,9 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+.logo {
+  @include font-logo;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6rem;
+  color: $color-button-text;
+}

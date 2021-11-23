@@ -1,0 +1,33 @@
+@use "../../../scss/mixins" as *;
+@use "../../../scss/variables" as *;
+@use "../../../scss/breakpoints" as *;
+.table-header {
+  height: 6rem;
+  line-height: 6rem;
+
+  @include font-amount;
+  text-align: left;
+
+  text-transform: capitalize;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    @include mq(medium) {
+      justify-content: center;
+    }
+
+    &:hover {
+      svg {
+        opacity: 1;
+      }
+    }
+
+    svg {
+      color: $font-color-default;
+      opacity: 0;
+    }
+  }
+}

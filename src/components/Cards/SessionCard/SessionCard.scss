@@ -1,0 +1,29 @@
+@use "../../../scss/mixins" as *;
+@use "../../../scss/variables" as *;
+.session-card {
+  @include box-shadow-default;
+  padding: 3rem 2rem;
+  transition: all 0.5s linear;
+  @include font-amount;
+  font-size: 1.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  &__break {
+    display: inline-block;
+    height: 0.2rem;
+    width: 100%;
+    background-color: $color-background-grey-hover;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0.5rem 0;
+  }
+
+  button {
+    margin-top: 1rem;
+    align-self: flex-end;
+  }
+}

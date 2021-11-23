@@ -1,70 +1,200 @@
-# Getting Started with Create React App
+### HOW TO USE THIS WEB APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Go to project repo folder:
 
-## Available Scripts
+```
+cd certus-solution
+```
 
-In the project directory, you can run:
+2. Install packages:
 
-### `yarn start`
+```
+npm i
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### libs to install - frontend
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- axios
+- redux
+- react-redux
+- react-router-dom
+- redux-devtools-extension
+- redux-thunk
+- react-icons
+- styled-components
+- node-sass (dev)
 
-### `yarn test`
+#### libs to install - proxy
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- json-server
 
-### `yarn build`
+3. Open 2 terminals:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In the 1st one (For react-app frontend):
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In the 2nd one (For json-server as backend):
 
-### `yarn eject`
+```
+npm run json-server
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+=================================
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Main Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Display all records with pagination.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   ![pagniation](src/assets/images/pagination.png)
 
-## Learn More
+2. Sort data column (number, date, text) in an ascending or descending order.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ![sort_ascending](src/assets/images/sort_ascending.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ![sort_descending](src/assets/images/sort_descending.png)
 
-### Code Splitting
+3. Filter data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ![filter_data](src/assets/images/filter_data.png)
 
-### Analyzing the Bundle Size
+4. Search data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ![search_data](src/assets/images/search_data.png)
 
-### Making a Progressive Web App
+5. Active (selected) background color according to amount value.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ![active_color](src/assets/images/active_color.png)
 
-### Advanced Configuration
+### Additional Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1.  Placeholder loading animation
 
-### Deployment
+![loading](src/assets/images/loading.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+2.  Expandable session card
 
-### `yarn build` fails to minify
+![expandable_card](src/assets/images/expandable_card.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=========================================================
+
+\*\*\*The backend of this project is simply faked using JSON Server.
+
+### Data Structure
+
+saved in mock/db.json
+
+Example:
+
+```
+ {
+      "_id": "7",
+      "amount": 120.13,
+      "date": "08/05/2021",
+      "other_party": "07-May-2021",
+      "particulars": "retail_dr",
+      "analysis_code": "asm_tc",
+      "reference": "07/05/2012",
+      "serial_number": "0000000000",
+      "branch": "06-058",
+      "notes": "transation 1"
+    }
+```
+
+The data schema is derived from the the values shown in the sketch design.
+
+Without thinking twice, I directly put the these values in the db.json which caused some annoying issues in the development. For example, the dates (date, other_party, reference) are in three different formats, which should be transformed into one unified format and then converted to different formats in the frontend while displaying.
+//TODO: unify date format
+
+### APIs
+
+The two APIs used in this project.
+Axios was used for API calls.
+
+GET ALL TRANSACTIONS DATA
+
+```
+http://localhost:3001/transaction
+```
+
+GET TRANSACTIONS using query/queries (example)
+
+```
+http://localhost:3001/transaction?amount=814.85&particulars=retail_cr
+```
+
+### Limitation of Json-server
+
+As I cannot touch the backend's code, some of the expected features have not been accomplished, such as, range filter.
+
+- "Get transactions whose amount is between 200 and 500"
+
+Apparently, this can be achieved through frontend code only. We can get all transactions and loop through them and save the desired ones into a new array; However, what if we have millions of data records?
+
+Personally, I think the better way is to make an api call like:
+
+```
+http://localhost:3001/transaction?minamount=200&maxamount=500
+```
+
+and the backend will have the logic to handle it.
+
+========================================================
+
+### SASS
+
+Sass variables and mixins are used for global styling management.
+
+Example of mixins for media query:
+
+```
+@mixin mq($key) {
+  $size: map-get(
+    $map: $breakpoints,
+    $key: $key,
+  );
+
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+```
+
+### Custom Hooks
+
+- useDebounce: to get the last data in every 500ms and ignore any other input
+- useUpdateEffect: to avoid invoking the callback of useEffect when 1st time rendering
+- useWindowDimensions: to get viewport width/height for responsive design
+
+### Why no redux
+
+The project currently has only one page and, I assumed that the maximum number of passing props from parent to children should be 3-4; However, the number increased too fast than I expected.
+//TODO: migrate to Redux
+
+========================================================
+
+### Responsive Layout
+
+As no design has been provided, so I made it according to my taste :D
+
+- 2k screen
+
+![2k](src/assets/images/2k.png)
+
+- 17inch wide screen
+
+![17inch](src/assets/images/17inch.png)
+
+- Desktop
+
+![sketch_design](src/assets/images/Sketch_Design.png)
+
+- Tablet
+
+![tablet](src/assets/images/tablet.png)
+
+- Mobile (IPhone 6/7/8)
+
+![mobile](src/assets/images/mobile.png)

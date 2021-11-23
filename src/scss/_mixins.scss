@@ -1,0 +1,49 @@
+//=============box-shadow===================//
+@mixin box-shadow-default {
+  box-shadow: 0 0.4rem 0.3rem rgba(#002f6b, 0.1);
+}
+
+@mixin box-shadow-light {
+  box-shadow: 0 0.2em 0.4rem rgba(#000, 0.5);
+}
+
+@mixin box-shadow-button {
+  box-shadow: 0 0em 0.2rem rgba(#000, 0.12), 0 0.2em 0.2rem rgba(#000, 0.24);
+}
+
+//==============font-related==============//
+//Source Sans Pro
+// Extra-light 200
+// Light 300
+// Regular 400
+// Semi-bold 600
+// Bold 700
+// Black 900
+
+// Roboto
+// Thin 100
+// Light 300
+// Regular 400
+// Medium 500
+// Bold 700
+// Black 900
+
+@mixin font-amount {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+}
+
+@mixin font-default {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+}
+
+@mixin font-logo {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+@mixin font-button {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+}

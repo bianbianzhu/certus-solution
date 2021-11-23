@@ -1,0 +1,67 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+@use "../../scss/breakpoints" as *;
+
+.toolbar {
+  width: 66%;
+  height: 6rem;
+  background-color: $color-background-grey-default;
+  @include box-shadow-default;
+  font-size: 2rem;
+  padding: 0 2rem;
+  padding-right: 3rem;
+  margin: 3rem 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  align-content: center;
+
+  &__status-wrapper {
+    flex: 0 1 32%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mq(smallest) {
+      display: none;
+    }
+  }
+
+  button {
+    align-self: center;
+
+    @include mq(medium) {
+      margin: auto;
+    }
+
+    @include mq(small) {
+      margin: unset;
+    }
+  }
+
+  & > span {
+    display: inline-block;
+    height: 70%;
+    width: 0.1rem;
+    background-color: $color-background-grey-hover;
+    margin: 0 3rem;
+
+    @include mq(medium) {
+      display: none;
+    }
+  }
+
+  @include mq(medium) {
+    flex-wrap: wrap;
+    background-color: unset;
+    box-shadow: unset;
+    gap: 2rem;
+  }
+
+  @include mq(small) {
+    align-self: flex-start;
+  }
+}

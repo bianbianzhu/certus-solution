@@ -1,0 +1,51 @@
+@use "../../../scss/variables" as *;
+@use "../../../scss/mixins" as *;
+.unmatched-rows {
+  width: 100%;
+  flex: 1;
+  font-size: 1.4rem;
+  position: relative;
+
+  th {
+    padding: 0 0.8rem;
+  }
+
+  td {
+    text-align: center;
+    position: relative;
+    transform: translateY(30%);
+    //table's display is set to table-cell, and cannot be set to block, flex...(otherwise, you will mess up with everything)
+    //use transform tricks to vertically center it
+  }
+
+  &::after {
+    content: "Nothing to be shown";
+    font-size: 4.2rem;
+    white-space: nowrap;
+    font-weight: bold;
+    opacity: 0.05;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  &--loading {
+    background-color: $color-background-grey-default;
+    background: linear-gradient(to right, #eeeeee 8%, #ffffff 28%, #eeeeee 43%);
+    @include box-shadow-default;
+    background-size: 800px 100%;
+    border-radius: 1rem;
+    animation: placeHolderShimmer 2s linear infinite;
+  }
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -800px 0;
+  }
+  100% {
+    background-position: 800px 0;
+  }
+}

@@ -1,0 +1,35 @@
+@use "../../../scss/_breakpoints.scss" as *;
+.table-topNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 2rem;
+
+  gap: 3rem;
+
+  & > *:nth-child(2) {
+    margin-left: auto;
+
+    @include mq(medium) {
+      margin-left: unset;
+    }
+  }
+
+  &__header-wrapper {
+    width: 26%;
+    padding: 1.8rem;
+  }
+
+  @include mq(medium) {
+    justify-content: flex-start;
+  }
+
+  @include mq(small) {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    div:first-child {
+      width: 100%;
+    }
+  }
+}

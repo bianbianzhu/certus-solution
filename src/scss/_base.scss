@@ -1,0 +1,11 @@
+@use "./breakpoints" as *;
+@use "./variables" as *;
+
+body {
+  min-height: 100vh;
+  font-family: "Source Sans Pro", sans-serif;
+  color: $font-color-highlighted;
+
+  @include mq(medium) {
+  }
+}

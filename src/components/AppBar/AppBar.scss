@@ -1,0 +1,28 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+@use "../../scss/breakpoints" as *;
+.appbar {
+  height: 6.5rem;
+  background-color: $color-background-grey-default;
+  @include box-shadow-default;
+  @include box-shadow-light;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 4rem;
+
+  position: relative;
+  z-index: 1;
+
+  &__avatar {
+    width: 2.4rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    @include mq(smallest) {
+      display: none;
+    }
+  }
+}

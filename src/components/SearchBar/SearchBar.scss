@@ -1,0 +1,53 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+.search-bar {
+  color: $color-background-icon-blue;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  input {
+    border: none;
+    padding: 0.4rem 0.8rem;
+    @include box-shadow-default;
+  }
+
+  select {
+    border: none;
+    outline: none;
+    padding: 0.4rem 0.8rem;
+    @include box-shadow-default;
+  }
+
+  option {
+    text-transform: capitalize;
+  }
+
+  &__msg {
+    color: red;
+    text-transform: capitalize;
+  }
+
+  &__search-content-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .btn.btn.btn.btn {
+    margin-left: -1.8rem;
+    cursor: pointer;
+    transform: scale(1.2) translateY(0.1rem);
+    position: relative;
+    z-index: 10;
+
+    &:hover {
+      transform: unset;
+    }
+
+    &:active {
+      transform: unset;
+      box-shadow: unset;
+    }
+  }
+}

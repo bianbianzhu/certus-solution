@@ -1,0 +1,21 @@
+@use "../../../scss/mixins" as *;
+@use "../../../scss/variables" as *;
+.table-row {
+  background-color: $color-background-grey-row;
+  @include box-shadow-default;
+  border: 0.05rem solid rgba(255, 255, 255, 0.8);
+  transform: scale(1, 0.95);
+  //box-shadow will only work with scale in <tr>
+
+  &:hover {
+    background-color: $color-background-grey-hover;
+  }
+
+  &--active-error {
+    background-color: $color-background-active--error;
+  }
+
+  &--active-success {
+    background-color: $color-background-active--success;
+  }
+}

@@ -1,0 +1,28 @@
+@use "../../scss/variables" as *;
+@use "../../scss/breakpoints" as *;
+.vertical-nav {
+  width: 21.9%;
+  background-color: $color-background-grey-default;
+
+  display: flex;
+  flex-direction: column;
+  padding: 3.2rem 2rem;
+  gap: 4rem;
+
+  &__title {
+    padding: 0 2.5rem 0 2rem;
+    & > *:not(:first-child) {
+      margin-top: 1rem;
+    }
+  }
+
+  @include mq(large) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 33%;
+    min-width: 30rem;
+    z-index: 10;
+  }
+}

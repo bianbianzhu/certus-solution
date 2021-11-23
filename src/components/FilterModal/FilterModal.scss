@@ -1,0 +1,59 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+.filter-model {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2.5rem;
+  gap: 1rem;
+  font-size: 1.4rem;
+  color: $font-color-highlighted;
+  &__section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  &__input {
+    flex: 1;
+    outline: none;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    @include box-shadow-default;
+  }
+
+  &__title {
+    white-space: nowrap;
+  }
+
+  &__select {
+    outline: none;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    @include box-shadow-default;
+  }
+
+  &__break {
+    width: 100%;
+    height: 0.2rem;
+    display: inline-block;
+    background-color: $color-background-grey-hover;
+    margin: 1rem auto;
+  }
+
+  .btn.btn.btn {
+    margin: auto;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 5rem;
+    height: 3rem;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $color-background-grey-default;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+}

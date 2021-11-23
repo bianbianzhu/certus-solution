@@ -1,0 +1,71 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+.btn {
+  display: inline-block;
+  background: unset;
+  border: unset;
+  outline: unset;
+  text-transform: capitalize;
+  transition: 0.1s linear;
+
+  &:hover {
+    transform: translateY(-0.2rem);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+  }
+
+  &--default {
+    // align-self: flex-end;
+    color: $color-button-text;
+    font-size: 1.8rem;
+    padding: 0.9rem 1.6rem;
+    background-color: $color-white;
+    @include font-button;
+    @include box-shadow-button;
+  }
+
+  &--icon {
+    color: $color-background-icon-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    @include box-shadow-button;
+    border-radius: 0.5rem;
+
+    &:disabled {
+      background-color: $color-background-grey-hover;
+      box-shadow: unset;
+      transform: translateY(0.35rem);
+
+      &:hover {
+        transform: translateY(0.35rem);
+      }
+
+      &:active {
+        transform: translateY(0.35rem);
+        box-shadow: unset;
+      }
+    }
+  }
+
+  &--floating-action {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 5rem;
+    right: 5rem;
+    background-color: $color-background-icon-blue;
+    border-radius: 50%;
+    width: 5rem;
+    font-size: 3rem;
+    line-height: 1;
+    aspect-ratio: 1;
+    color: $color-white;
+    @include box-shadow-default;
+  }
+}
