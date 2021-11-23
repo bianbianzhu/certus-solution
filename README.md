@@ -12,6 +12,8 @@ cd certus-solution
 npm i
 ```
 
+As a result of the above command, the following libs will be installed.
+
 #### libs to install - frontend
 
 - axios
@@ -48,11 +50,11 @@ npm run json-server
 
 1. Display all records with pagination.
 
-   ![pagniation](/src/assets/images/pagination.png?raw=true)
+   ![pagniation](./src/assets/images/pagination.png?raw=true)
 
 2. Sort data column (number, date, text) in an ascending or descending order.
 
-   ![sort_ascending](src/assets/images/sort_ascending.png?raw=true)
+   ![sort_ascending](./src/assets/images/sort_ascending.png)
 
    ![sort_descending](src/assets/images/sort_descending.png?raw=true)
 
