@@ -48,7 +48,7 @@ npm run json-server
 
 1. Display all records with pagination.
 
-   ![pagniation](src/assets/images/pagination.png?raw=true)
+   ![pagniation](/src/assets/images/pagination.png?raw=true)
 
 2. Sort data column (number, date, text) in an ascending or descending order.
 
