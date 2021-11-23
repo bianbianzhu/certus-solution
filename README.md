@@ -66,35 +66,35 @@ npm run json-server
 
 1. Display all records with pagination.
 
-   ![pagniation](./src/assets/images/pagination.png?raw=true)
+   ![pagniation](images/pagination.png)
 
 2. Sort data column (number, date, text) in an ascending or descending order.
 
-   ![sort_ascending](./src/assets/images/sort_ascending.png)
+   ![sort_ascending](images/sort_ascending.png)
 
-   ![sort_descending](src/assets/images/sort_descending.png?raw=true)
+   ![sort_descending](images/sort_descending.png)
 
 3. Filter data.
 
-   ![filter_data](src/assets/images/filter_data.png)
+   ![filter_data](images/filter_data.png)
 
 4. Search data.
 
-   ![search_data](src/assets/images/search_data.png)
+   ![search_data](images/search_data.png)
 
 5. Active (selected) background color according to amount value.
 
-   ![active_color](src/assets/images/active_color.png)
+   ![active_color](images/active_color.png)
 
 ### Additional Features
 
 1.  Placeholder loading animation
 
-![loading](src/assets/images/loading.png)
+![loading](images/loading.png)
 
 2.  Expandable session card
 
-![expandable_card](src/assets/images/expandable_card.png)
+![expandable_card](images/expandable_card.png)
 
 =========================================================
 
@@ -199,20 +199,20 @@ As no design has been provided, so I made it according to my taste :D
 
 - 2k screen
 
-![2k](src/assets/images/2k.png)
+![2k](images/2k.png)
 
 - 17inch wide screen
 
-![17inch](src/assets/images/17inch.png)
+![17inch](images/17inch.png)
 
 - Desktop
 
-![sketch_design](src/assets/images/Sketch_Design.png)
+![sketch_design](images/Sketch_Design.png)
 
 - Tablet
 
-![tablet](src/assets/images/tablet.png)
+![tablet](images/tablet.png)
 
 - Mobile (IPhone 6/7/8)
 
-![mobile](src/assets/images/mobile.png)
+![mobile](images/mobile.png)
